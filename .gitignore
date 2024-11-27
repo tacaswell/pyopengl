@@ -7,6 +7,7 @@ __pycache__
 *.pyd
 src/khronosapi
 accelerate/dist
+accelerate/*.c
 *.so
 mmap-test-data.dat
 .tox
