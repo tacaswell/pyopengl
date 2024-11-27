@@ -223,8 +223,3 @@ cdef class NumpyHandler(FormatHandler):
 
             else:
                 return instance
-
-
-# Cython numpy tutorial neglects to mention this AFAICS
-# get segfaults without it
-import_array()
