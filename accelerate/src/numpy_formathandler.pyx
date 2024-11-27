@@ -156,11 +156,11 @@ cdef class NumpyHandler(FormatHandler):
         cdef np.dtype typecode
         cdef int res
         if PyArray_CheckScalar(instance):
-            Py_INCREF(instance)
-            working = self.c_zeros((1,), typeCode)
-            res = PyArray_FillWithScalar(<object>working, instance)
-            if res < -1:
-                raise ValueError("Unable to fill new array with value %r (%s)"%(instance,instance.__class__))
+            # Py_INCREF(instance)
+            # working = self.c_zeros((1,), typeCode)
+            # res = PyArray_FillWithScalar(working, instance)
+            # if res < -1:
+            raise ValueError("Unable to fill new array with value %r (%s)"%(instance,instance.__class__))
         else:
             working = (<np.ndarray>self.c_check_array( instance ))
         if typeCode is None:
